@@ -27,4 +27,5 @@ function updateGamepad() {
 
 
 updateGamepad();
+console.clear();
 
