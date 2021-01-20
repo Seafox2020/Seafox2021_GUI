@@ -1,0 +1,29 @@
+.spacework1{
+    height: 30px;
+}
+.leds_off{
+    width: 25px;
+    height: 25px;
+    background:red;
+    border-radius: 30px;
+    border: rgb(0, 0, 0) 2px solid;
+    box-shadow: 1px 1px white;
+}
+.leds_on{
+    width: 25px;
+    height: 25px;
+    background: rgb(123, 255, 47);
+    border-radius: 30px;
+    border: rgb(0, 0, 0) 2px solid;
+    box-shadow: 1px 1px white;
+}
+.tab{
+    width: 15px;
+}
+.leds_font{
+    /*font-style: italic;*/
+    font-weight:normal;
+    font-family: impact;
+    font-size: 18px;
+    text-shadow: 2px 2px rgb(156, 151, 151);
+}

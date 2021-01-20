@@ -1,0 +1,85 @@
+.headerblock{
+    background-color: #5D6D7E;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+  }
+.header{
+  background-color: #5D6D7E;
+  height: 80px;
+  text-align: center;
+  padding: 5px;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: Impact;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color: yellow;
+  -webkit-text-stroke: 3px black;
+  text-shadow: 2px 2px blanchedalmond;
+  }
+.enable-disable-btn{
+  background-color: #5D6D7E;
+  height: 80px;
+  padding: 8px;
+  padding-left: 30px;
+  }
+.disable-indicator{
+  background-color: #5D6D7E;
+  height: 80px;
+  text-align: center;
+  padding: 12px;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: Impact;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color:red;
+  -webkit-text-stroke: 3px black;
+  text-shadow: 2px 2px blanchedalmond;
+  }
+.enable-indicator{
+  background-color: #5D6D7E;
+  height: 80px;
+  text-align: center;
+  padding: 12px;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: Impact;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color:greenyellow;
+  -webkit-text-stroke: 3px black;
+  text-shadow: 2px 2px blanchedalmond;
+  }
+.menu{
+  height:700px;
+  background:rgb(112, 108, 108);
+  border-radius: 20px;
+  border: black 3px solid;
+  box-shadow: 3px 3px white;
+}
+/*.menu_buttons{
+  height:30px;
+  /*vertical-align: text-top;
+  background: rgb(92, 90, 90);
+  border: black 2px solid;
+  border-radius: 20px;
+  font-size: 20px;
+  /*font-style: italic;
+  font-weight: bold;
+  font-family: Impact;
+  letter-spacing: 0px;
+  word-spacing: 5px;
+  color: rgb(38, 144, 231);
+  -webkit-text-stroke: 1.5px black;
+  text-shadow: 1px 1px blanchedalmond;
+}*/
+.spacer{
+  height: 15px;
+}
+
+  

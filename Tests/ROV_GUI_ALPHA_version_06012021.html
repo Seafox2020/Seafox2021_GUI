@@ -1,0 +1,152 @@
+<!--SEAFOX INVENTIVE GUI-->
+<!doctype html>
+<!--Declarar el idioma de preferencia de la pagina en cuestion-->
+<html lang="en">
+
+  <head> <!--En este apartado se dec;-->
+    <!--TITULO DEL TAB-->
+    <title>SEAFOX INVENTIVE GUI</title>
+    <!-- Formato de pagina web -->
+    <meta charset="utf-8">
+    <!-- Desplegar pantalla para cualquier dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Maxima Compatibilidad con Internet Explorer y Microsoft Edge -->
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/Bootstrap_4/bootstrap.min.css">
+    <link rel="stylesheet" href="css/GUI_CSS/toggle-btn.css">
+    <link rel="stylesheet" href="css/GUI_CSS/head-blocks.css">
+    <link rel="stylesheet" href="css/GUI_CSS/Camera-block.css">
+    <link rel="stylesheet" href="css/GUI_CSS/Dashboard.css">
+
+  </head>
+  
+  <!--------------------------------------------------------------------------------------->
+  <!--Color background de la pagina-->
+  <body style = background-color:#5D6D7E;>
+  <!--Cuerpo/contedor de la pagina web; PD. el argumento -fluid es para expandir el margen 
+    del workspace de la pagina web-->
+  <div class="container-fluid ">
+    <!--Primera fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+      <!--Sin Uso-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock">
+        <a href="gamepad_settings.html" target="_blank">
+        <img alt="Settings" src="img/gamepad.png" width="70">
+        </a></div>
+      <!--Logo SeaFox-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"><img src="img/ROV-logo-without-bg.png" width="100px" ></div>
+      <!--Logo CETYS-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"><img src="img/cetys_logo.png" width="70px"></div>
+      <!--Sin Uso-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"></div>
+      <!--Titulo-->
+      <div class="col-4  col-sm-4  col-md-4  col-lg-4   col-xl-4 header"><p>SEAFOX INVENTIVE</p></div>
+      <!--ROV-State-Indicator-->
+      <div id="en-de-indicator" class="col-2  col-sm-2  col-md-2  col-lg-2   col-xl-2 disable-indicator">DISABLE</div>
+      <!--Rov-State_Switch-->
+      <div class="col-2  col-sm-2  col-md-2  col-lg-2   col-xl-2 enable-disable-btn">
+        <div class="toggle-btn" onclick="this.classList.toggle('active'); rov_state()">
+          <div class="inner-circle active"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Segunda fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+      <div class="col-12   col-sm-12    col-md-12    col-lg-12  col-xl-12 spacer"></div>
+    </div>
+
+    <!--Tercera fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+      <div class="col-2   col-sm-2    col-md-2    col-lg-2  col-xl-2 menu container">
+        <div class="row">
+          <div class = "col-md-12 col-lg-12  col-xl-12 spacer"></div>
+
+          <div class = "col-md-12 col-lg-12  col-xl-12 spacework1 row">
+            <div class = "tab"></div>
+            <div class = "leds"></div>
+            <div class = "tab"></div>
+            <div class = "tab"></div>
+            <div class = "leds_font">Main-ROV</div>
+          </div>
+
+          <div class = "col-md-12 col-lg-12  col-xl-12 spacework1 row">
+            <div class = "tab"></div>
+            <div class = "leds"></div>
+            <div class = "tab"></div>
+            <div class = "tab"></div>
+            <div class = "leds_font">Gamepad/Joystick</div>
+          </div>
+
+          <div class = "col-md-12 col-lg-12  col-xl-12 spacework1 row">
+            <div class = "tab"></div>
+            <div class = "leds"></div>
+            <div class = "tab"></div>
+            <div class = "tab"></div>
+            <div class = "leds_font">Stream-Video</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-10  col-sm-10   col-md-10   col-lg-10  col-xl-10">
+        <div class = "main-block-camera">Aqui estara el video</div>
+      </div>
+    </div>
+
+  </div>
+
+
+    <!--Press button on controller to connect.
+<div id="axes" style="display: flex; flex-direction: column;"></div>
+
+<script>
+window.addEventListener('gamepadconnected', (event) => {
+  const update = () => {
+    const output = document.getElementById('axes');
+    output.innerHTML = ''; // clear the output
+
+    for (const gamepad of navigator.getGamepads()) {
+      if (!gamepad) continue;
+      for (const [index, axis] of gamepad.axes.entries()) {
+        output.insertAdjacentHTML('beforeend',
+          `<label>${gamepad.index}, ${index}
+             <progress value=${axis * 0.5 + 0.5}></progress>
+           </label>`);
+      }
+    }
+    requestAnimationFrame(update);
+  };
+  update();
+});
+</script>
+      
+-->
+    
+<!--////////////////////////////////////////////--
+---------------JAVASCRIPT ZONE-----------------
+----///////////////////////////////////////////-->
+
+    <!-- jQuery.js; Popper.js; Bootstrap.js / Es muy importante este orden para el correcto funcionamiento del programa-->
+    <script src="js/Bootstrap_4/jquery-3.5.1.slim.min"></script>
+    <script src="js/Bootstrap_4/popper.min.js"></script>
+    <script src="js/Bootstrap_4/bootstrap.min.js"></script>
+
+    <!--  ROS_bridges: Estos son los scripts necesarios para realizar un socket en nuestra applicacion para asi poder comunicarnos 
+    el sistema ROS dentro de la Jetson -->
+    <script src="js/ROS_bridge/roslib.min.js"></script>
+    <script src="js/ROS_bridge/eventemitter2.min.js"></script>
+    <script src="js/ROS_bridge/keyboardteleop.min.js"></script>
+
+     <!--  ROS--JavaScript IMPORTANTE: en caso que se pierdan los scripts anteriores a este, se pueden utilizar las siguientes direcciones 
+      para obtenerlos; Pd. Es neccesario internet para acceder a ellos.
+     <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+     <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+     <script src="https://static.robotwebtools.org/keyboardteleopjs/current/keyboardteleop.min.js"></script>-->
+
+    <!--Javascripts para animaciones, logicas y conductas de la GUI-->
+    <script src="js/GUI_js/rov_state.js"></script>
+  </body>
+</html>
+
+    

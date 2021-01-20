@@ -1,0 +1,7 @@
+.main-block-camera{
+    height:700px;
+  background:rgb(112, 108, 108);
+  border-radius: 20px;
+  border: black 3px solid;
+  box-shadow: 3px 3px white;
+}

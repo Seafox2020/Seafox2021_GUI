@@ -1,0 +1,92 @@
+<!--SEAFOX INVENTIVE GUI-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--TITULO DEL TAB-->
+    <title>SETTINGS</title>
+    <!-- Formato de pagina web -->
+    <meta charset="utf-8">
+    <!-- Desplegar pantalla para cualquier dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Maxima Compatibilidad con Internet Explorer y Microsoft Edge -->
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/toggle-btn.css">
+    <link rel="stylesheet" href="css/head-blocks.css">
+    <link rel="stylesheet" href="css/Settings.css">
+
+  </head>
+  <!--------------------------------------------------------------------------------------->
+  <!--Color background de la pagina-->
+  <body style = background-color:#5D6D7E;>
+  <!--Cuerpo/contedor de la pagina web; PD. el argumento -fluid es para expandir el margen 
+    del workspace de la pagina web-->
+  <div class="container-fluid ">
+    <!--Primera fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+      <!--Sin Uso-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"></div>
+      <!--Logo SeaFox-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"></div>
+      <!--Logo CETYS-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"></div>
+      <!--Sin Uso-->
+      <div class="col-1  col-sm-1  col-md-1  col-lg-1   col-xl-1 headerblock"></div>
+      <!--Titulo-->
+      <div class="col-4  col-sm-4  col-md-4  col-lg-4   col-xl-4 Gamepad_title"><p>GAMEPAD</p></div>
+      <!--ROV-State-Indicator-->
+      <div class="col-2  col-sm-2  col-md-2  col-lg-2   col-xl-2 headerblock"></div>
+      <!--Rov-State_Switch-->
+      <div class="col-2  col-sm-2  col-md-2  col-lg-2   col-xl-2 headerblock"></div>
+    </div>
+
+    <!--Segunda fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+      <div class="col-12   col-sm-12    col-md-12    col-lg-12  col-xl-12 spacer"></div>
+    </div>
+
+    <!--Tercera fila de la pagina web, incluye el encabezado de la pagina-->
+    <div class="row">
+        <div class="col-12   col-sm-12    col-md-12    col-lg-12  col-xl-12 container">
+            <div class="background_1 ">
+                Press button on controller to connect.
+<div id="axes" style="display: flex; flex-direction: column;"></div>
+
+<script>
+window.addEventListener('gamepadconnected', (event) => {
+  const update = () => {
+    const output = document.getElementById('axes');
+    output.innerHTML = ''; // clear the output
+    
+
+    for (const gamepad of navigator.getGamepads()) {
+      if (!gamepad) continue;
+      for (const [index, axis] of gamepad.axes.entries()) {
+        output.insertAdjacentHTML('beforeend',
+          `<label>${gamepad.index}, ${index},
+             <progress class = "bar-value" value=${axis+1} max="2"></progress>
+           </label>`);
+      }
+    }
+    requestAnimationFrame(update);
+  };
+  update();
+});
+</script>
+            </div>
+            
+      </div>
+  </div>
+
+  
+  
+<!----------------------------------------------------------------------------------------------------------------------->
+    <!-- jQuery.js; Popper.js; Bootstrap.js / Es muy important4 este orden para el correcto funcionamiento del programa-->
+    <script src="js/jquery-3.5.1.slim.min"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+  </body>
+</html>
+
+    
